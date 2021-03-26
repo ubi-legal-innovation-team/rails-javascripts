@@ -58,8 +58,8 @@ document.addEventListener('turbolinks:load', () => {
   if(form){
     form.forEach(f => {
       var button = f.querySelector('input[type="submit"]');
-      var required_inputs = f.querySelectorAll('.required').length > 0 ? f.querySelectorAll('.required') : null ;
-      var optional_inputs = f.querySelectorAll('.optional').length > 0 ? f.querySelectorAll('.optional') : null ;
+      var required_inputs = f.querySelectorAll('.required-input').length > 0 ? f.querySelectorAll('.required-input') : null ;
+      var optional_inputs = f.querySelectorAll('.optional-input').length > 0 ? f.querySelectorAll('.optional-input') : null ;
 
       button.addEventListener('click', function(){formValidations(event,required_inputs,optional_inputs,button)}, false);
     })

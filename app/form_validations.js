@@ -2,21 +2,21 @@
 const addErrorMessage = (input) => {
   if (input.nodeName == "SELECT") {
     input.nextSibling.querySelector('.selectize-input').classList.add('border-red');
-    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<p class='error-message'>It can't be blank</p>`);
+    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<span class='error-message'>It can't be blank</span>`);
   } else if (input.nodeName == "TEXTAREA") {
     input.classList.add('border-red');
-    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<p class='error-message'>It can't be blank</p>`);
+    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<span class='error-message'>It can't be blank</span>`);
   }
     else if (input.type == "text") {
     input.classList.add('border-red');
-    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<p class='error-message'>It can't be blank</p>`);
+    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<span class='error-message'>It can't be blank</span>`);
   } else {
-    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<p class='error-message'>Choose an option</p>`);
+    input.closest('.parent').querySelector('label').insertAdjacentHTML('afterend',`<span class='error-message'>Choose an option</span>`);
   }
 };
 
 const formValidations = (e,r,o,b) => {
-  $('p.error-message').remove();
+  $('span.error-message').remove();
 
   var formValid  = false;
   var radios     = [];
@@ -113,7 +113,7 @@ const formValidations = (e,r,o,b) => {
     // Enabled (or not) form submit
     if (!formValid) {
       e.preventDefault();
-      document.querySelector("p.error-message").scrollIntoView({ behavior: 'smooth' });
+      document.querySelector("span.error-message").scrollIntoView({ behavior: 'smooth' });
     } else {
       return true;
     }
