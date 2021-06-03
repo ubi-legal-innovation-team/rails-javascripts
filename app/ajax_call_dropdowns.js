@@ -22,7 +22,7 @@ function call_notifications() {
       success: function(data) {
 
         $(form).addClass('active');
-        $(".dropdown-ajaxified.user_notifications_call").addClass('active shadow-w-350-left');
+        $(".dropdown-ajaxified.user_notifications_call").addClass('active shadow w-350 left');
         $(".dropdown-ajaxified.user_notifications_call").append(data);
         $('#notifications_count').remove();
       },
@@ -43,7 +43,7 @@ function call_notifications() {
         if (!event.target.closest(".dropdown-ajaxified.user_notifications_call")){
 
           $(form).removeClass('active');
-          $(".dropdown-ajaxified.user_notifications_call").removeClass('active shadow-w-350-left');
+          $(".dropdown-ajaxified.user_notifications_call").removeClass('active shadow w-350 left');
           $('#user_notifications').remove();
 
         }
@@ -76,7 +76,7 @@ function call_user_nav() {
       },
       success: function(data) {
         $(form).addClass('active');
-        $(".dropdown-ajaxified.user_nav_call").addClass('active shadow-w-250-left');
+        $(".dropdown-ajaxified.user_nav_call").addClass('active shadow w-250 left');
         $(".dropdown-ajaxified.user_nav_call").append(data);
       },
       completed: function() {
@@ -96,7 +96,7 @@ function call_user_nav() {
         if (!event.target.closest(".dropdown-ajaxified.user_nav_call")){
 
           $(form).removeClass('active');
-          $(".dropdown-ajaxified.user_nav_call").removeClass('active shadow-w-250-left');
+          $(".dropdown-ajaxified.user_nav_call").removeClass('active shadow w-250 left');
           $('#user_nav').remove();
 
         }
