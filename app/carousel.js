@@ -1,6 +1,6 @@
 
 const slidesNavigationCarousel = (event,labels,_this) => {
-  var childNodeIndex = Array.prototype.indexOf.call(document.querySelector('.slidesNavigation').children, event.currentTarget);
+  var childNodeIndex = Array.prototype.indexOf.call(document.querySelector('.slides-navigation').children, event.currentTarget);
   count              = 1 + childNodeIndex;
 
   labels.forEach(element => {

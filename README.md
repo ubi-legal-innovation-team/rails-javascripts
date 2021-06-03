@@ -12,6 +12,7 @@ Ensure you have the following gems in your Rails `Gemfile`
 # Gemfile
 gem 'autoprefixer-rails'
 gem 'uglifier'
+gem 'jquery-rails'
 ```
 
 Then replace Rails' javascripts by Ubi Innovation Team's javascripts:

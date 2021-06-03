@@ -5,7 +5,7 @@ const dropdownable = (active_dropdownable) => {
 
       element.addEventListener('click', function(){
         element.classList.toggle('active');
-        $(element.parentNode).next('.dropdown-element')[0].classList.toggle('dropdownable');
+        $(element.parentNode).nextAll('.dropdown-element')[0].classList.toggle('dropdownable');
       });
 
     })
@@ -22,8 +22,14 @@ const openDropdown = (event,uniq_dropdowns,uniq_open_dropdown) => {
 
     if (dropdownable){
       element.classList.add('active');
+      if (event.currentTarget.querySelector('i')) {
+        event.currentTarget.querySelector('i').style.transform = "rotate(180deg)";
+      }
     } else {
       element.classList.remove('active');
+      if (event.currentTarget.querySelector('i')) {
+        event.currentTarget.querySelector('i').style.transform = "rotate(0deg)";
+      }
     }
   });
 
@@ -44,5 +50,9 @@ const closeAllDropdowns = (event,uniq_dropdowns,uniq_open_dropdown) => {
 
   uniq_open_dropdown.forEach(element => {
     element.classList.remove('active');
+    if (element.querySelector('i')) {
+      element.querySelector('i').style.transform = "rotate(0deg)";
+    }
   });
+
 };
