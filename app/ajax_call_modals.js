@@ -29,7 +29,6 @@ function call_modal() {
         setTimeout(function(){$(modal_container).addClass('active');}, 50);
 
         closeModal(modal,modal_container);
-        setProjectVersionAttributes();
 
         // selectize.js
         selectizeSingle();
@@ -40,11 +39,6 @@ function call_modal() {
 
         // cloning_fields.js
         cloningFields();
-
-        var input = document.querySelector('#edit_version .other');
-        if (input) {
-          input.addEventListener('click', addInputToProjectGoals);
-        }
 
       },
       completed: function() {
