@@ -16,6 +16,7 @@
 
   call_notifications();
   call_user_nav();
+  call_menu_responsive();
 
 // carousel.js
 

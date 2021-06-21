@@ -105,3 +105,55 @@ function call_user_nav() {
 
   });
 };
+
+function call_menu_responsive() {
+
+  // ----- Add dropdown content to DOM -----
+
+  $("#menu_responsive_call").submit(function(event) {
+
+    // Prevent redirection
+    event.preventDefault();
+
+    var form                = $(this),
+        url                 = $(form).attr("action"),
+        type                = $(form).attr("method");
+
+    $.ajax({
+      url: url,
+      type: type,
+      data: $(form).serialize(),
+      beforeSend: function() {
+        // add loader
+      },
+      success: function(data) {
+        $(form).addClass('active');
+        $(".dropdown-ajaxified.menu_responsive_call").addClass('active shadow w-250 left');
+        $(".dropdown-ajaxified.menu_responsive_call").append(data);
+      },
+      completed: function() {
+        // remove loader
+      },
+      error: function(data) {
+        alert("Fatal Error");
+      },
+    });
+
+    // ----- Remove dropdown content to DOM -----
+
+    window.addEventListener('click', function(event){
+
+      if ($(".dropdown-ajaxified.menu_responsive_call").hasClass('active')) {
+
+        if (!event.target.closest(".dropdown-ajaxified.menu_responsive_call")){
+
+          $(form).removeClass('active');
+          $(".dropdown-ajaxified.menu_responsive_call").removeClass('active shadow w-250 left');
+          $('#menu_responsive').remove();
+
+        }
+      }
+    });
+
+  });
+};
