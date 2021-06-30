@@ -1,5 +1,6 @@
 const openPopUp = (event,uniq_pop_ups) => {
   var pop_up = document.querySelector('.' + event.currentTarget.getAttribute('id'));
+
   uniq_pop_ups.push(pop_up);
 
   uniq_pop_ups.forEach(element => {
@@ -10,7 +11,7 @@ const openPopUp = (event,uniq_pop_ups) => {
       element.classList.add('active');
     } else {
       element.classList.remove('active');
-    }
+    };
   });
 };
 
