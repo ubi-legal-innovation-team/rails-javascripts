@@ -8,9 +8,7 @@ var loader_svg = '<svg width="50" height="52" viewBox="0 0 15 16" fill="none" xm
 call_modal();
 
 // ajax_calls_dropdowns.js
-call_notifications();
-call_user_nav();
-call_menu_responsive();
+call_dropdown();
 
 // carousel.js
 var labels = document.querySelectorAll('.carousel label'),
